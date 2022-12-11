@@ -1,9 +1,60 @@
-﻿int sizeOfArray = GetNumber("Enter size of your array ");
+﻿TestingGetNumberOfEvens();
+TestingFillArray();
+int sizeOfArray = GetNumber("Enter size of your array ");
 int[] array = new int [sizeOfArray];
 FillArray(array);
 PrintArray(array);
 int count = GetNumberOfEvens(array);
 Console.WriteLine($" -> {count}");
+
+
+void TestingFillArray()
+{
+    Console.WriteLine("Testing of the \"FillArray\" method has been launched... ");
+    int[] testArray = new int [10];
+    FillArray(testArray);
+    int tmp = 0;
+    for (int i = 0; i < testArray.Length; i++)
+    {
+        if (testArray[i] >= 100 && testArray[i] < 1000)
+        {
+            tmp = 0;
+        }
+        else
+        {
+            tmp += 1;
+        }
+    }
+    bool isPositiveAndThreeDigit = tmp == 0;
+    if (isPositiveAndThreeDigit)
+    {
+        Console.WriteLine("Test completed successfully!");
+    }
+    else
+    {
+        Console.WriteLine("Error! Need to fix the method!");
+    }
+    Console.WriteLine();
+}
+
+
+void TestingGetNumberOfEvens()
+{
+    Console.WriteLine("Testing of the \"GetNumberOfEvens\" method has been launched... ");
+    int[] testArray = {345, 897, 568, 234};
+    int expected = 2;
+    int actual = GetNumberOfEvens(testArray);
+    bool isEqual = expected == actual;
+    if (isEqual)
+    {
+        Console.WriteLine("Test completed successfully!");
+    }
+    else
+    {
+        Console.WriteLine("Error! Need to fix the method!");
+    }
+    Console.WriteLine();
+}
 
 
 int GetNumberOfEvens(int[] array)
