@@ -1,9 +1,29 @@
-﻿Random rnd = new Random();
+﻿TestingGetSumOfOddIndex();
+Random rnd = new Random();
 int randomSizeOfArray = rnd.Next(1, 20);
 int[] array = new int [randomSizeOfArray];
 FillArray(array);
 PrintArray(array);
 Console.WriteLine($" -> {GetSumOfOddIndex(array)}");
+
+
+void TestingGetSumOfOddIndex()
+{
+    Console.WriteLine("Testing of the \"GetSumOfOddIndex\" method has been launched... ");
+    int[] testArray = {3, 7, 23, 12};
+    int expected = 19;
+    int actual = GetSumOfOddIndex(testArray);
+    bool isEqual = expected == actual;
+    if (isEqual)
+    {
+        Console.WriteLine("Test completed successfully!");
+    }
+    else
+    {
+        Console.WriteLine("Error! Need to fix the method!");
+    }
+    Console.WriteLine();
+}
 
 
 int GetSumOfOddIndex(int[] array)
